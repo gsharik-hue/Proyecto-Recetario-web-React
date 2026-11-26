@@ -5,16 +5,17 @@ import Navbar from '../components/Navbar'
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900">
+    <div className="min-h-screen flex flex-col bg-[#f4f6f9] text-slate-900 font-sans">
       <Navbar />
 
       <main className="flex-1">
         <Outlet />
       </main>
 
-      <footer className="bg-white border-t border-stone-200/80 py-6 text-center text-xs sm:text-sm text-stone-500">
-        <div className="max-w-6xl mx-auto px-4">
-          CookBook © 2026 — Recetario comunitario en React 19
+      <footer className="bg-white border-t border-slate-200 py-5 text-xs sm:text-sm text-slate-500">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <span className="font-semibold text-slate-700">CookBook</span>
+          <span>Recetario comunitario · React 19 + Tailwind CSS v4</span>
         </div>
       </footer>
 
