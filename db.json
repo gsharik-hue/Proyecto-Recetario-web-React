@@ -1,0 +1,220 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Arepas de choclo con queso",
+      "category": "Desayuno",
+      "difficulty": "Fácil",
+      "prepTime": 25,
+      "servings": 4,
+      "description": "Arepas suaves y dulces de maíz tierno asadas a la plancha, acompañadas de queso campesino derretido.",
+      "ingredients": [
+        { "name": "Maíz tierno desgranado", "quantity": "3 tazas" },
+        { "name": "Queso campesino rallado", "quantity": "200 g" },
+        { "name": "Mantequilla", "quantity": "1 cucharada" },
+        { "name": "Sal", "quantity": "1/2 cucharadita" }
+      ],
+      "steps": [
+        "Licúa el maíz tierno con la mantequilla y la sal hasta lograr una mezcla espesa.",
+        "Incorpora el queso rallado y mezcla bien.",
+        "Cocina porciones en sartén o plancha engrasada unos 4 minutos por cada lado hasta dorar."
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-18T08:00:00.000Z",
+      "author": {
+        "name": "Valentina Rojas",
+        "bio": "Amante de los desayunos tradicionales y las recetas caseras rápidas.",
+        "email": "valentina.rojas@example.com"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Caldo de costilla criollo",
+      "category": "Almuerzo",
+      "difficulty": "Fácil",
+      "prepTime": 45,
+      "servings": 4,
+      "description": "Caldo reconfortante de costilla de res con papa criolla, cilantro fresco y un toque de cebolla larga.",
+      "ingredients": [
+        { "name": "Costilla de res", "quantity": "600 g" },
+        { "name": "Papa criolla", "quantity": "6 unidades" },
+        { "name": "Cebolla larga picada", "quantity": "2 ramas" },
+        { "name": "Cilantro fresco", "quantity": "Al gusto" }
+      ],
+      "steps": [
+        "Pon a hervir la costilla en agua con sal y cebolla larga durante 25 minutos.",
+        "Agrega las papas criollas y cocina hasta que espesen ligeramente el caldo.",
+        "Sirve caliente con abundante cilantro picado."
+      ],
+      "favorite": true,
+      "createdAt": "2026-11-19T12:30:00.000Z",
+      "author": {
+        "name": "Carlos Mendoza",
+        "bio": "Cocinero aficionado enfocado en platos de cuchara.",
+        "email": "carlos.mendoza@example.com"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Wrap de pollo y vegetales asados",
+      "category": "Cena",
+      "difficulty": "Fácil",
+      "prepTime": 20,
+      "servings": 2,
+      "description": "Tortilla integral rellena de tiras de pechuga, pimentón, calabacín y aderezo ligero de yogur.",
+      "ingredients": [
+        { "name": "Tortillas de trigo integrales", "quantity": "2 unidades" },
+        { "name": "Pechuga de pollo en tiras", "quantity": "250 g" },
+        { "name": "Pimentón rojo en julianas", "quantity": "1/2 unidad" },
+        { "name": "Yogur griego natural", "quantity": "3 cucharadas" }
+      ],
+      "steps": [
+        "Saltea el pollo sazonado y el pimentón en un sartén con un poco de aceite.",
+        "Unta las tortillas con yogur griego condimentado con limón y sal.",
+        "Rellena, enrolla y tuesta ligeramente cada wrap antes de servir."
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-20T19:15:00.000Z",
+      "author": {
+        "name": "Sofía Herrera",
+        "bio": "Crea cenas prácticas y equilibradas para entre semana.",
+        "email": "sofia.herrera@example.com"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Torta de banano y avena",
+      "category": "Postre",
+      "difficulty": "Media",
+      "prepTime": 40,
+      "servings": 6,
+      "description": "Bizcocho húmedo y aromático endulzado con bananos maduros, hojuelas de avena y canela.",
+      "ingredients": [
+        { "name": "Bananos maduros", "quantity": "3 unidades" },
+        { "name": "Hojuelas de avena", "quantity": "1.5 tazas" },
+        { "name": "Huevos", "quantity": "2 unidades" },
+        { "name": "Canela en polvo", "quantity": "1 cucharadita" }
+      ],
+      "steps": [
+        "Precalienta el horno a 180 °C y engrasa un molde pequeño.",
+        "Tritura los bananos y mézclalos con los huevos, la avena, la canela y polvo de hornear.",
+        "Hornea por 30 minutos hasta que al insertar un palillo salga limpio."
+      ],
+      "favorite": true,
+      "createdAt": "2026-11-21T16:00:00.000Z",
+      "author": {
+        "name": "Camila Castro",
+        "bio": "Repostería casera sin complicaciones.",
+        "email": "camila.castro@example.com"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Limonada de hierbabuena granizada",
+      "category": "Bebida",
+      "difficulty": "Fácil",
+      "prepTime": 10,
+      "servings": 4,
+      "description": "Bebida cítrica y refrescante licuada con hielo, jugo de limón fresco y hojas de hierbabuena.",
+      "ingredients": [
+        { "name": "Jugo de limón", "quantity": "1/2 taza" },
+        { "name": "Hojas de hierbabuena", "quantity": "15 hojas" },
+        { "name": "Hielo", "quantity": "2 tazas" },
+        { "name": "Agua fría", "quantity": "2 tazas" }
+      ],
+      "steps": [
+        "Licúa el agua, el jugo de limón, endulzante al gusto y la hierbabuena por unos segundos.",
+        "Añade el hielo y licúa brevemente hasta lograr textura granizada.",
+        "Sirve de inmediato decorando con una ramita fresca."
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-22T11:00:00.000Z",
+      "author": {
+        "name": "Andrés Gómez",
+        "bio": "Explora bebidas naturales y jugos de temporada.",
+        "email": "andres.gomez@example.com"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Risotto de champiñones al vino blanco",
+      "category": "Almuerzo",
+      "difficulty": "Difícil",
+      "prepTime": 50,
+      "servings": 4,
+      "description": "Arroz arborio cremoso cocinado poco a poco con caldo caliente, champiñones salteados y queso parmesano.",
+      "ingredients": [
+        { "name": "Arroz arborio", "quantity": "300 g" },
+        { "name": "Champiñones laminados", "quantity": "250 g" },
+        { "name": "Caldo de verduras caliente", "quantity": "1 litro" },
+        { "name": "Queso parmesano rallado", "quantity": "80 g" }
+      ],
+      "steps": [
+        "Sofríe cebolla picada y los champiñones; agrega el arroz y nacara durante 2 minutos.",
+        "Vierte cucharones de caldo caliente poco a poco, removiendo mientras absorbe el líquido.",
+        "Al lograr una textura melosa, retira del fuego e integra mantequilla y parmesano."
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-22T18:40:00.000Z",
+      "author": {
+        "name": "Mateo Vargas",
+        "bio": "Entusiasta de la cocina italiana y las cocciones lentas.",
+        "email": "mateo.vargas@example.com"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Tostadas francesas con frutos rojos",
+      "category": "Desayuno",
+      "difficulty": "Media",
+      "prepTime": 20,
+      "servings": 2,
+      "description": "Rebanadas de pan brioche pasadas por mezcla de huevo, leche y vainilla, doradas y servidas con frutos rojos.",
+      "ingredients": [
+        { "name": "Rebanadas de pan brioche", "quantity": "4 unidades" },
+        { "name": "Huevo", "quantity": "1 unidad" },
+        { "name": "Leche", "quantity": "1/2 taza" },
+        { "name": "Fresas y moras", "quantity": "1 taza" }
+      ],
+      "steps": [
+        "Bate el huevo con la leche, una pizca de canela y esencia de vainilla.",
+        "Sumerge cada rebanada por ambos lados sin empaparla en exceso.",
+        "Dora en sartén con mantequilla y acompaña con los frutos rojos."
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-23T09:10:00.000Z",
+      "author": {
+        "name": "Valentina Rojas",
+        "bio": "Amante de los desayunos tradicionales y las recetas caseras rápidas.",
+        "email": "valentina.rojas@example.com"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Mousse exprés de maracuyá",
+      "category": "Postre",
+      "difficulty": "Media",
+      "prepTime": 25,
+      "servings": 4,
+      "description": "Postre frío, aireado y con el contraste ácido ideal de pulpa de maracuyá y crema.",
+      "ingredients": [
+        { "name": "Pulpa de maracuyá concentrada", "quantity": "3/4 taza" },
+        { "name": "Crema de leche fría", "quantity": "1 taza" },
+        { "name": "Leche condensada", "quantity": "200 g" },
+        { "name": "Gelatina sin sabor hidratada", "quantity": "7 g" }
+      ],
+      "steps": [
+        "Licúa la pulpa de maracuyá con la leche condensada y la gelatina disuelta.",
+        "Incorpora con movimientos envolventes la crema batida hasta unificar.",
+        "Refrigera mínimo 2 horas antes de servir en copas."
+      ],
+      "favorite": true,
+      "createdAt": "2026-11-24T07:30:00.000Z",
+      "author": {
+        "name": "Camila Castro",
+        "bio": "Repostería casera sin complicaciones.",
+        "email": "camila.castro@example.com"
+      }
+    }
+  ]
+}
