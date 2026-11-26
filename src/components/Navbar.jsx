@@ -22,6 +22,9 @@ const Navbar = () => {
           <NavLink to="/recipes" className={linkClass}>
             Recetas
           </NavLink>
+          <NavLink to="/favorites" className={linkClass}>
+            Favoritas
+          </NavLink>
           <NavLink to="/add-recipe" className={linkClass}>
             Nueva Receta
           </NavLink>

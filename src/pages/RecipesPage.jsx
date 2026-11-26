@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import RecipeCard from '../components/RecipeCard'
 import Spinner from '../components/Spinner'
-import { getAllRecipes } from '../services/recipesApi'
+import { getAllRecipes } from '../Services/recipesApi'
 
 const RecipesPage = () => {
   const [recipes, setRecipes] = useState([])

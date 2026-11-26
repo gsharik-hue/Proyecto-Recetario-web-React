@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import Card from '../components/Card'
 import RecipeCard from '../components/RecipeCard'
 import Spinner from '../components/Spinner'
-import { getLatestRecipes } from '../services/recipesApi'
+import { getLatestRecipes } from '../Services/recipesApi'
 
 const HomePage = () => {
   const [recentRecipes, setRecentRecipes] = useState([])
