@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
+import { FaArrowLeft } from 'react-icons/fa'
 import RecipeForm from '../components/RecipeForm'
 import { createRecipe } from '../services/recipesApi'
 
@@ -21,19 +22,37 @@ const AddRecipePage = () => {
   }
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-10">
-      <title>Publicar receta | CookBook</title>
-      <meta name="description" content="Publica una nueva receta en CookBook" />
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Publicar nueva receta</h1>
-      <p className="text-sm text-gray-600 mb-6">
-        Completa los datos de tu receta para compartirla con la comunidad.
-      </p>
+    <section className="max-w-3xl mx-auto px-4 py-8">
+      <title>Publicar nueva receta | CookBook</title>
+      <meta name="description" content="Completa todos los campos para añadir tu receta al catálogo." />
 
-      <RecipeForm
-        onSubmitRecipe={handleCreate}
-        submitLabel="Publicar receta"
-        submitting={submitting}
-      />
+      <div className="mb-6">
+        <Link
+          to="/recipes"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-900 transition"
+        >
+          <FaArrowLeft />
+          <span>Volver a recetas</span>
+        </Link>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 sm:p-8">
+        <div className="mb-6">
+          <h1 className="text-3xl font-extrabold text-gray-900 mb-1">
+            Publicar nueva receta
+          </h1>
+          <p className="text-sm text-gray-500">
+            Completa todos los campos para añadir tu receta al catálogo.
+          </p>
+        </div>
+
+        <RecipeForm
+          onSubmitRecipe={handleCreate}
+          submitLabel="Publicar receta"
+          submitting={submitting}
+          embedded
+        />
+      </div>
     </section>
   )
 }

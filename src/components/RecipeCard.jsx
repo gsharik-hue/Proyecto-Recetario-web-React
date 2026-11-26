@@ -33,14 +33,14 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
   }
 
   return (
-    <article className="bg-white rounded-xl shadow-md border border-gray-100 p-5 flex flex-col justify-between hover:shadow-lg transition">
+    <article className="bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 flex flex-col justify-between hover:shadow-md transition">
       <div>
-        <div className="flex items-center justify-between gap-2 mb-3">
+        <div className="flex items-center justify-between gap-2 mb-4">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-semibold uppercase tracking-wide bg-rose-100 text-rose-700 px-2.5 py-1 rounded-full">
+            <span className="text-xs font-semibold bg-amber-100/80 text-amber-900 px-3 py-1 rounded-full">
               {recipe.category}
             </span>
-            <span className="text-xs font-medium bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full">
+            <span className="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
               {recipe.difficulty}
             </span>
           </div>
@@ -54,18 +54,20 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
                   ? `Quitar ${recipe.title} de favoritas`
                   : `Marcar ${recipe.title} como favorita`
               }
-              className="p-2 rounded-full hover:bg-rose-50 text-rose-600 transition cursor-pointer"
+              className="p-1.5 rounded-full hover:bg-rose-50 text-rose-600 transition cursor-pointer"
             >
               {optimisticFavorite ? (
-                <FaHeart className="text-lg" />
+                <FaHeart className="text-base" />
               ) : (
-                <FaRegHeart className="text-lg" />
+                <FaRegHeart className="text-base" />
               )}
             </button>
           )}
         </div>
 
-        <h3 className="text-lg font-bold text-gray-900 mb-2">{recipe.title}</h3>
+        <h3 className="text-xl font-extrabold text-gray-900 mb-2 leading-snug">
+          {recipe.title}
+        </h3>
 
         <p className="text-sm text-gray-600 mb-2">{displayedDescription}</p>
 
@@ -73,28 +75,28 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
           <button
             type="button"
             onClick={() => setShowFullDescription((prev) => !prev)}
-            className="text-xs font-semibold text-rose-600 hover:text-rose-800 mb-4 cursor-pointer"
+            className="text-xs font-semibold text-amber-700 hover:text-amber-900 mb-3 cursor-pointer"
           >
             {showFullDescription ? 'Ver menos' : 'Ver más'}
           </button>
         )}
       </div>
 
-      <div className="pt-4 mt-2 border-t border-gray-100">
+      <div className="pt-4 mt-4 border-t border-gray-100">
         <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-          <span className="flex items-center gap-1">
-            <FaClock className="text-rose-500" />
+          <span className="flex items-center gap-1.5">
+            <FaClock className="text-gray-400" />
             {recipe.prepTime} min
           </span>
-          <span className="flex items-center gap-1">
-            <FaUserFriends className="text-rose-500" />
+          <span className="flex items-center gap-1.5">
+            <FaUserFriends className="text-gray-400" />
             {recipe.servings} porciones
           </span>
         </div>
 
         <Link
           to={`/recipes/${recipe.id}`}
-          className="block w-full text-center bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition"
+          className="block w-full text-center bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition"
         >
           Ver receta
         </Link>

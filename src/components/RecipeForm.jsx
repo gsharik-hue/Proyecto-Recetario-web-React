@@ -63,6 +63,7 @@ const RecipeForm = ({
   onSubmitRecipe,
   submitLabel = 'Guardar receta',
   submitting = false,
+  embedded = false,
 }) => {
   const [formData, setFormData] = useState(() => buildInitialState(initialRecipe))
   const [errors, setErrors] = useState({})
@@ -234,11 +235,15 @@ const RecipeForm = ({
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 sm:p-8 space-y-6"
+      className={
+        embedded
+          ? 'space-y-6'
+          : 'bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 sm:p-8 space-y-6'
+      }
     >
       <div>
         <label htmlFor="title" className="block text-sm font-semibold text-gray-800 mb-1.5">
-          Título de la receta *
+          Título de la receta
         </label>
         <input
           id="title"
@@ -246,23 +251,23 @@ const RecipeForm = ({
           type="text"
           value={formData.title}
           onChange={handleFieldChange}
-          placeholder="Ej. Empanadas de pipián"
-          className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+          placeholder="Ej: Empanadas de carne caseras"
+          className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
         />
         {errors.title && <p className="text-xs text-red-600 mt-1">{errors.title}</p>}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="category" className="block text-sm font-semibold text-gray-800 mb-1.5">
-            Categoría *
+            Categoría
           </label>
           <select
             id="category"
             name="category"
             value={formData.category}
             onChange={handleFieldChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-rose-500"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-500"
           >
             {CATEGORIES.map((cat) => (
               <option key={cat} value={cat}>
@@ -275,14 +280,14 @@ const RecipeForm = ({
 
         <div>
           <label htmlFor="difficulty" className="block text-sm font-semibold text-gray-800 mb-1.5">
-            Dificultad *
+            Dificultad
           </label>
           <select
             id="difficulty"
             name="difficulty"
             value={formData.difficulty}
             onChange={handleFieldChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-rose-500"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-500"
           >
             {DIFFICULTIES.map((diff) => (
               <option key={diff} value={diff}>
@@ -295,7 +300,7 @@ const RecipeForm = ({
 
         <div>
           <label htmlFor="prepTime" className="block text-sm font-semibold text-gray-800 mb-1.5">
-            Tiempo (min) *
+            Tiempo de preparación (minutos)
           </label>
           <input
             id="prepTime"
@@ -304,14 +309,14 @@ const RecipeForm = ({
             min="1"
             value={formData.prepTime}
             onChange={handleFieldChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
           {errors.prepTime && <p className="text-xs text-red-600 mt-1">{errors.prepTime}</p>}
         </div>
 
         <div>
           <label htmlFor="servings" className="block text-sm font-semibold text-gray-800 mb-1.5">
-            Porciones (1-20) *
+            Porciones (1 a 20)
           </label>
           <input
             id="servings"
@@ -321,7 +326,7 @@ const RecipeForm = ({
             max="20"
             value={formData.servings}
             onChange={handleFieldChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
           {errors.servings && <p className="text-xs text-red-600 mt-1">{errors.servings}</p>}
         </div>
@@ -329,7 +334,7 @@ const RecipeForm = ({
 
       <div>
         <label htmlFor="description" className="block text-sm font-semibold text-gray-800 mb-1.5">
-          Descripción *
+          Descripción
         </label>
         <textarea
           id="description"
@@ -338,18 +343,18 @@ const RecipeForm = ({
           value={formData.description}
           onChange={handleFieldChange}
           placeholder="Describe brevemente el plato y su sabor..."
-          className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+          className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
         />
         {errors.description && <p className="text-xs text-red-600 mt-1">{errors.description}</p>}
       </div>
 
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-bold text-gray-900">Ingredientes *</span>
+          <span className="text-sm font-bold text-gray-900">Ingredientes</span>
           <button
             type="button"
             onClick={addIngredientRow}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold bg-rose-50 hover:bg-rose-100 text-rose-700 px-3 py-1.5 rounded-lg border border-rose-200 transition cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 px-3 py-1.5 rounded-lg border border-amber-200 transition cursor-pointer"
           >
             <FaPlus />
             <span>Agregar ingrediente</span>
@@ -368,7 +373,7 @@ const RecipeForm = ({
                 value={ing.name}
                 onChange={(e) => handleIngredientChange(index, 'name', e.target.value)}
                 placeholder="Nombre del ingrediente"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
 
@@ -382,7 +387,7 @@ const RecipeForm = ({
                 value={ing.quantity}
                 onChange={(e) => handleIngredientChange(index, 'quantity', e.target.value)}
                 placeholder="Cantidad (ej. 2 tazas)"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
 
@@ -404,11 +409,11 @@ const RecipeForm = ({
 
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-bold text-gray-900">Pasos de preparación *</span>
+          <span className="text-sm font-bold text-gray-900">Pasos de preparación</span>
           <button
             type="button"
             onClick={addStepRow}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold bg-rose-50 hover:bg-rose-100 text-rose-700 px-3 py-1.5 rounded-lg border border-rose-200 transition cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 px-3 py-1.5 rounded-lg border border-amber-200 transition cursor-pointer"
           >
             <FaPlus />
             <span>Agregar paso</span>
@@ -417,7 +422,7 @@ const RecipeForm = ({
 
         {formData.steps.map((step, index) => (
           <div key={index} className="flex items-start gap-2">
-            <span className="w-7 h-7 rounded-full bg-gray-100 text-gray-700 text-xs font-bold flex items-center justify-center mt-1.5 flex-shrink-0">
+            <span className="w-7 h-7 rounded-full bg-amber-100 text-amber-900 text-xs font-bold flex items-center justify-center mt-1.5 flex-shrink-0">
               {index + 1}
             </span>
             <label htmlFor={`step-${index}`} className="sr-only">
@@ -429,7 +434,7 @@ const RecipeForm = ({
               value={step}
               onChange={(e) => handleStepChange(index, e.target.value)}
               placeholder={`Describe el paso ${index + 1}...`}
-              className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+              className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
             <button
               type="button"
@@ -451,7 +456,7 @@ const RecipeForm = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="authorName" className="block text-sm font-semibold text-gray-800 mb-1.5">
-              Nombre del autor *
+              Nombre del autor
             </label>
             <input
               id="authorName"
@@ -460,14 +465,14 @@ const RecipeForm = ({
               value={formData.author.name}
               onChange={handleAuthorChange}
               placeholder="Ej. Laura Gómez"
-              className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+              className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
             {errors.authorName && <p className="text-xs text-red-600 mt-1">{errors.authorName}</p>}
           </div>
 
           <div>
             <label htmlFor="authorEmail" className="block text-sm font-semibold text-gray-800 mb-1.5">
-              Correo electrónico *
+              Correo electrónico
             </label>
             <input
               id="authorEmail"
@@ -476,7 +481,7 @@ const RecipeForm = ({
               value={formData.author.email}
               onChange={handleAuthorChange}
               placeholder="laura@example.com"
-              className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+              className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
             {errors.authorEmail && (
               <p className="text-xs text-red-600 mt-1">{errors.authorEmail}</p>
@@ -495,7 +500,7 @@ const RecipeForm = ({
             value={formData.author.bio}
             onChange={handleAuthorChange}
             placeholder="Ej. Cocinera casera amante de los sabores locales"
-            className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+            className="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
       </div>
@@ -504,7 +509,7 @@ const RecipeForm = ({
         <button
           type="submit"
           disabled={submitting}
-          className="bg-rose-600 hover:bg-rose-700 disabled:opacity-60 text-white font-semibold px-6 py-2.5 rounded-xl transition cursor-pointer"
+          className="bg-amber-600 hover:bg-amber-700 disabled:opacity-60 text-white font-semibold px-6 py-2.5 rounded-xl transition cursor-pointer"
         >
           {submitting ? 'Guardando...' : submitLabel}
         </button>
@@ -514,3 +519,4 @@ const RecipeForm = ({
 }
 
 export default RecipeForm
+            
