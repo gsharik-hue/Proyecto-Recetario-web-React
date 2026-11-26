@@ -24,7 +24,10 @@ const AddRecipePage = () => {
   return (
     <section className="max-w-3xl mx-auto px-4 py-8">
       <title>Publicar nueva receta | CookBook</title>
-      <meta name="description" content="Completa todos los campos para añadir tu receta al catálogo." />
+      <meta
+        name="description"
+        content="Completa todos los campos para añadir tu receta al catálogo."
+      />
 
       <div className="mb-6">
         <Link
@@ -36,12 +39,12 @@ const AddRecipePage = () => {
         </Link>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 sm:p-8">
+      <div className="bg-white rounded-2xl border-t-4 border-t-amber-600 border-x border-b border-stone-200/90 shadow-xs p-6 sm:p-8">
         <div className="mb-6">
-          <h1 className="text-3xl font-extrabold text-gray-900 mb-1">
+          <h1 className="text-3xl font-extrabold text-stone-900 mb-1">
             Publicar nueva receta
           </h1>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-stone-500">
             Completa todos los campos para añadir tu receta al catálogo.
           </p>
         </div>
