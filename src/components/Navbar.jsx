@@ -4,14 +4,14 @@ import { FaUtensils } from 'react-icons/fa'
 const Navbar = () => {
   const linkClass = ({ isActive }) =>
     isActive
-      ? 'bg-amber-950/75 text-white px-3.5 py-2 rounded-lg text-sm font-semibold transition'
-      : 'text-amber-50 hover:bg-amber-700/60 hover:text-white px-3.5 py-2 rounded-lg text-sm font-medium transition'
+      ? 'bg-amber-950/80 text-white px-3.5 py-2 rounded-xl text-sm font-semibold transition'
+      : 'text-amber-50 hover:bg-amber-700/60 hover:text-white px-3.5 py-2 rounded-xl text-sm font-medium transition'
 
   return (
-    <header className="bg-amber-600 border-b border-amber-700 sticky top-0 z-40 shadow-sm">
+    <header className="bg-amber-600 border-b border-amber-700 sticky top-0 z-40 shadow-xs">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <NavLink to="/" className="flex items-center gap-2.5 text-white font-bold text-xl">
-          <FaUtensils className="text-white text-lg" />
+          <FaUtensils className="text-amber-100 text-lg" />
           <span>CookBook</span>
         </NavLink>
 
