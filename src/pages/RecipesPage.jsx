@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
-import RecipeCard from '../components/RecipeCard'
+import { toast } from 'react-toastify'
+import RecipeList from '../components/RecipeList'
 import Spinner from '../components/Spinner'
-import { getAllRecipes } from '../Services/recipesApi'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { getAllRecipes } from '../services/recipesApi'
 
 const RecipesPage = () => {
   const [recipes, setRecipes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [favoriteIds, setFavoriteIds] = useLocalStorage('cookbook_favorite_ids', [])
 
   useEffect(() => {
     let ignore = false
@@ -36,9 +39,25 @@ const RecipesPage = () => {
     }
   }, [])
 
+  const handleToggleFavorite = async (recipeId, nextIsFavorite) => {
+    const idStr = String(recipeId)
+    setFavoriteIds((prev) => {
+      const exists = prev.includes(idStr)
+      if (nextIsFavorite && !exists) {
+        return [...prev, idStr]
+      }
+      if (!nextIsFavorite && exists) {
+        return prev.filter((item) => item !== idStr)
+      }
+      return prev
+    })
+    toast.info(nextIsFavorite ? 'Agregada a favoritas' : 'Quitada de favoritas')
+  }
+
   return (
     <section className="max-w-6xl mx-auto px-4 py-10">
       <title>CookBook | Todas las recetas</title>
+      <meta name="description" content="Busca, filtra y explora todas las recetas de CookBook" />
 
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Todas las recetas</h1>
 
@@ -57,11 +76,11 @@ const RecipesPage = () => {
       )}
 
       {!loading && !error && recipes.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+        <RecipeList
+          recipes={recipes}
+          favoriteIds={favoriteIds}
+          onToggleFavorite={handleToggleFavorite}
+        />
       )}
     </section>
   )

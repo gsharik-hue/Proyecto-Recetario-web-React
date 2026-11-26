@@ -30,6 +30,7 @@ const EditRecipePage = () => {
   return (
     <section className="max-w-3xl mx-auto px-4 py-10">
       <title>Editar: {recipe.title} | CookBook</title>
+      <meta name="description" content={`Edita la receta ${recipe.title}`} />
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Editar receta</h1>
       <p className="text-sm text-gray-600 mb-6">
         Modifica la información de &ldquo;{recipe.title}&rdquo; y guarda los cambios.

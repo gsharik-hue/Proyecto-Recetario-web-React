@@ -23,6 +23,7 @@ const AddRecipePage = () => {
   return (
     <section className="max-w-3xl mx-auto px-4 py-10">
       <title>Publicar receta | CookBook</title>
+      <meta name="description" content="Publica una nueva receta en CookBook" />
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Publicar nueva receta</h1>
       <p className="text-sm text-gray-600 mb-6">
         Completa los datos de tu receta para compartirla con la comunidad.

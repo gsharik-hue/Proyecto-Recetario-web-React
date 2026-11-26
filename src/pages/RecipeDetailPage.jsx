@@ -9,13 +9,30 @@ import {
   FaTrash,
   FaUser,
   FaEnvelope,
+  FaHeart,
+  FaRegHeart,
 } from 'react-icons/fa'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import { deleteRecipe } from '../services/recipesApi'
 
 const RecipeDetailPage = () => {
   const recipe = useLoaderData()
   const navigate = useNavigate()
   const [deleting, setDeleting] = useState(false)
+  const [favoriteIds, setFavoriteIds] = useLocalStorage('cookbook_favorite_ids', [])
+
+  const isFavorite = favoriteIds.includes(String(recipe.id))
+
+  const handleToggleFavorite = () => {
+    const idStr = String(recipe.id)
+    setFavoriteIds((prev) => {
+      const next = prev.includes(idStr)
+        ? prev.filter((item) => item !== idStr)
+        : [...prev, idStr]
+      toast.info(next.includes(idStr) ? 'Agregada a favoritas' : 'Quitada de favoritas')
+      return next
+    })
+  }
 
   const handleDelete = async () => {
     const confirmed = window.confirm(
@@ -61,7 +78,17 @@ const RecipeDetailPage = () => {
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                type="button"
+                onClick={handleToggleFavorite}
+                aria-label={isFavorite ? 'Quitar de favoritas' : 'Agregar a favoritas'}
+                className="inline-flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-sm font-semibold px-3.5 py-2 rounded-lg transition cursor-pointer"
+              >
+                {isFavorite ? <FaHeart /> : <FaRegHeart />}
+                <span>{isFavorite ? 'Favorita' : 'Favorita'}</span>
+              </button>
+
               <Link
                 to={`/edit-recipe/${recipe.id}`}
                 className="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-3.5 py-2 rounded-lg transition"
@@ -121,7 +148,6 @@ const RecipeDetailPage = () => {
         </div>
 
         <div className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-gray-100">
-          {/* Ingredientes */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Ingredientes</h2>
             <ul className="space-y-2.5">
@@ -137,7 +163,6 @@ const RecipeDetailPage = () => {
             </ul>
           </div>
 
-          {/* Pasos numerados */}
           <div>
             <h2 className="text-xl font-bold text-gray-900 mb-4">Preparación</h2>
             <ol className="space-y-3">
@@ -153,7 +178,6 @@ const RecipeDetailPage = () => {
           </div>
         </div>
 
-        {/* Autor */}
         <div className="p-6 sm:p-8 bg-gray-50">
           <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">
             Sobre el autor

@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { toast } from 'react-toastify'
 import Hero from '../components/Hero'
 import Card from '../components/Card'
 import RecipeCard from '../components/RecipeCard'
 import Spinner from '../components/Spinner'
-import { getLatestRecipes } from '../Services/recipesApi'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { getLatestRecipes } from '../services/recipesApi'
 
 const HomePage = () => {
   const [recentRecipes, setRecentRecipes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [favoriteIds, setFavoriteIds] = useLocalStorage('cookbook_favorite_ids', [])
 
   useEffect(() => {
     let ignore = false
@@ -38,6 +41,18 @@ const HomePage = () => {
       ignore = true
     }
   }, [])
+
+  const handleToggleFavorite = async (recipeId, nextIsFavorite) => {
+    const idStr = String(recipeId)
+    setFavoriteIds((prev) =>
+      nextIsFavorite
+        ? prev.includes(idStr)
+          ? prev
+          : [...prev, idStr]
+        : prev.filter((item) => item !== idStr)
+    )
+    toast.info(nextIsFavorite ? 'Agregada a favoritas' : 'Quitada de favoritas')
+  }
 
   return (
     <>
@@ -93,7 +108,12 @@ const HomePage = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {recentRecipes.map((recipe) => (
-                <RecipeCard key={recipe.id} recipe={recipe} />
+                <RecipeCard
+                  key={recipe.id}
+                  recipe={recipe}
+                  isFavorite={favoriteIds.includes(String(recipe.id))}
+                  onToggleFavorite={handleToggleFavorite}
+                />
               ))}
             </div>
 

@@ -86,7 +86,6 @@ const RecipeForm = ({
     }))
   }
 
-  // Ingredientes dinámicos (sin mutar)
   const handleIngredientChange = (index, field, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -113,7 +112,6 @@ const RecipeForm = ({
     })
   }
 
-  // Pasos dinámicos (sin mutar)
   const handleStepChange = (index, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -238,7 +236,6 @@ const RecipeForm = ({
       noValidate
       className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 sm:p-8 space-y-6"
     >
-      {/* Título */}
       <div>
         <label htmlFor="title" className="block text-sm font-semibold text-gray-800 mb-1.5">
           Título de la receta *
@@ -255,7 +252,6 @@ const RecipeForm = ({
         {errors.title && <p className="text-xs text-red-600 mt-1">{errors.title}</p>}
       </div>
 
-      {/* Categoría, Dificultad, Tiempo y Porciones */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div>
           <label htmlFor="category" className="block text-sm font-semibold text-gray-800 mb-1.5">
@@ -331,7 +327,6 @@ const RecipeForm = ({
         </div>
       </div>
 
-      {/* Descripción */}
       <div>
         <label htmlFor="description" className="block text-sm font-semibold text-gray-800 mb-1.5">
           Descripción *
@@ -348,7 +343,6 @@ const RecipeForm = ({
         {errors.description && <p className="text-xs text-red-600 mt-1">{errors.description}</p>}
       </div>
 
-      {/* Ingredientes dinámicos */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-sm font-bold text-gray-900">Ingredientes *</span>
@@ -408,7 +402,6 @@ const RecipeForm = ({
         {errors.ingredients && <p className="text-xs text-red-600">{errors.ingredients}</p>}
       </div>
 
-      {/* Pasos dinámicos */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-sm font-bold text-gray-900">Pasos de preparación *</span>
@@ -452,7 +445,6 @@ const RecipeForm = ({
         {errors.steps && <p className="text-xs text-red-600">{errors.steps}</p>}
       </div>
 
-      {/* Datos del autor */}
       <div className="pt-4 border-t border-gray-100 space-y-4">
         <h2 className="text-base font-bold text-gray-900">Datos del autor</h2>
 

@@ -9,22 +9,10 @@
       "servings": 4,
       "description": "Arepas suaves y dulces de maíz tierno asadas a la plancha, acompañadas de queso campesino derretido.",
       "ingredients": [
-        {
-          "name": "Maíz tierno desgranado",
-          "quantity": "3 tazas"
-        },
-        {
-          "name": "Queso campesino rallado",
-          "quantity": "200 g"
-        },
-        {
-          "name": "Mantequilla",
-          "quantity": "1 cucharada"
-        },
-        {
-          "name": "Sal",
-          "quantity": "1/2 cucharadita"
-        }
+        { "name": "Maíz tierno desgranado", "quantity": "3 tazas" },
+        { "name": "Queso campesino rallado", "quantity": "200 g" },
+        { "name": "Mantequilla", "quantity": "1 cucharada" },
+        { "name": "Sal", "quantity": "1/2 cucharadita" }
       ],
       "steps": [
         "Licúa el maíz tierno con la mantequilla y la sal hasta lograr una mezcla espesa.",
@@ -48,22 +36,10 @@
       "servings": 4,
       "description": "Caldo reconfortante de costilla de res con papa criolla, cilantro fresco y un toque de cebolla larga.",
       "ingredients": [
-        {
-          "name": "Costilla de res",
-          "quantity": "600 g"
-        },
-        {
-          "name": "Papa criolla",
-          "quantity": "6 unidades"
-        },
-        {
-          "name": "Cebolla larga picada",
-          "quantity": "2 ramas"
-        },
-        {
-          "name": "Cilantro fresco",
-          "quantity": "Al gusto"
-        }
+        { "name": "Costilla de res", "quantity": "600 g" },
+        { "name": "Papa criolla", "quantity": "6 unidades" },
+        { "name": "Cebolla larga picada", "quantity": "2 ramas" },
+        { "name": "Cilantro fresco", "quantity": "Al gusto" }
       ],
       "steps": [
         "Pon a hervir la costilla en agua con sal y cebolla larga durante 25 minutos.",
@@ -87,22 +63,10 @@
       "servings": 2,
       "description": "Tortilla integral rellena de tiras de pechuga, pimentón, calabacín y aderezo ligero de yogur.",
       "ingredients": [
-        {
-          "name": "Tortillas de trigo integrales",
-          "quantity": "2 unidades"
-        },
-        {
-          "name": "Pechuga de pollo en tiras",
-          "quantity": "250 g"
-        },
-        {
-          "name": "Pimentón rojo en julianas",
-          "quantity": "1/2 unidad"
-        },
-        {
-          "name": "Yogur griego natural",
-          "quantity": "3 cucharadas"
-        }
+        { "name": "Tortillas de trigo integrales", "quantity": "2 unidades" },
+        { "name": "Pechuga de pollo en tiras", "quantity": "250 g" },
+        { "name": "Pimentón rojo en julianas", "quantity": "1/2 unidad" },
+        { "name": "Yogur griego natural", "quantity": "3 cucharadas" }
       ],
       "steps": [
         "Saltea el pollo sazonado y el pimentón en un sartén con un poco de aceite.",
@@ -126,22 +90,10 @@
       "servings": 6,
       "description": "Bizcocho húmedo y aromático endulzado con bananos maduros, hojuelas de avena y canela.",
       "ingredients": [
-        {
-          "name": "Bananos maduros",
-          "quantity": "3 unidades"
-        },
-        {
-          "name": "Hojuelas de avena",
-          "quantity": "1.5 tazas"
-        },
-        {
-          "name": "Huevos",
-          "quantity": "2 unidades"
-        },
-        {
-          "name": "Canela en polvo",
-          "quantity": "1 cucharadita"
-        }
+        { "name": "Bananos maduros", "quantity": "3 unidades" },
+        { "name": "Hojuelas de avena", "quantity": "1.5 tazas" },
+        { "name": "Huevos", "quantity": "2 unidades" },
+        { "name": "Canela en polvo", "quantity": "1 cucharadita" }
       ],
       "steps": [
         "Precalienta el horno a 180 °C y engrasa un molde pequeño.",
@@ -165,22 +117,10 @@
       "servings": 4,
       "description": "Bebida cítrica y refrescante licuada con hielo, jugo de limón fresco y hojas de hierbabuena.",
       "ingredients": [
-        {
-          "name": "Jugo de limón",
-          "quantity": "1/2 taza"
-        },
-        {
-          "name": "Hojas de hierbabuena",
-          "quantity": "15 hojas"
-        },
-        {
-          "name": "Hielo",
-          "quantity": "2 tazas"
-        },
-        {
-          "name": "Agua fría",
-          "quantity": "2 tazas"
-        }
+        { "name": "Jugo de limón", "quantity": "1/2 taza" },
+        { "name": "Hojas de hierbabuena", "quantity": "15 hojas" },
+        { "name": "Hielo", "quantity": "2 tazas" },
+        { "name": "Agua fría", "quantity": "2 tazas" }
       ],
       "steps": [
         "Licúa el agua, el jugo de limón, endulzante al gusto y la hierbabuena por unos segundos.",
@@ -204,22 +144,10 @@
       "servings": 4,
       "description": "Arroz arborio cremoso cocinado poco a poco con caldo caliente, champiñones salteados y queso parmesano.",
       "ingredients": [
-        {
-          "name": "Arroz arborio",
-          "quantity": "300 g"
-        },
-        {
-          "name": "Champiñones laminados",
-          "quantity": "250 g"
-        },
-        {
-          "name": "Caldo de verduras caliente",
-          "quantity": "1 litro"
-        },
-        {
-          "name": "Queso parmesano rallado",
-          "quantity": "80 g"
-        }
+        { "name": "Arroz arborio", "quantity": "300 g" },
+        { "name": "Champiñones laminados", "quantity": "250 g" },
+        { "name": "Caldo de verduras caliente", "quantity": "1 litro" },
+        { "name": "Queso parmesano rallado", "quantity": "80 g" }
       ],
       "steps": [
         "Sofríe cebolla picada y los champiñones; agrega el arroz y nacara durante 2 minutos.",
@@ -243,22 +171,10 @@
       "servings": 2,
       "description": "Rebanadas de pan brioche pasadas por mezcla de huevo, leche y vainilla, doradas y servidas con frutos rojos.",
       "ingredients": [
-        {
-          "name": "Rebanadas de pan brioche",
-          "quantity": "4 unidades"
-        },
-        {
-          "name": "Huevo",
-          "quantity": "1 unidad"
-        },
-        {
-          "name": "Leche",
-          "quantity": "1/2 taza"
-        },
-        {
-          "name": "Fresas y moras",
-          "quantity": "1 taza"
-        }
+        { "name": "Rebanadas de pan brioche", "quantity": "4 unidades" },
+        { "name": "Huevo", "quantity": "1 unidad" },
+        { "name": "Leche", "quantity": "1/2 taza" },
+        { "name": "Fresas y moras", "quantity": "1 taza" }
       ],
       "steps": [
         "Bate el huevo con la leche, una pizca de canela y esencia de vainilla.",
@@ -282,22 +198,10 @@
       "servings": 4,
       "description": "Postre frío, aireado y con el contraste ácido ideal de pulpa de maracuyá y crema.",
       "ingredients": [
-        {
-          "name": "Pulpa de maracuyá concentrada",
-          "quantity": "3/4 taza"
-        },
-        {
-          "name": "Crema de leche fría",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Leche condensada",
-          "quantity": "200 g"
-        },
-        {
-          "name": "Gelatina sin sabor hidratada",
-          "quantity": "7 g"
-        }
+        { "name": "Pulpa de maracuyá concentrada", "quantity": "3/4 taza" },
+        { "name": "Crema de leche fría", "quantity": "1 taza" },
+        { "name": "Leche condensada", "quantity": "200 g" },
+        { "name": "Gelatina sin sabor hidratada", "quantity": "7 g" }
       ],
       "steps": [
         "Licúa la pulpa de maracuyá con la leche condensada y la gelatina disuelta.",
@@ -312,6 +216,5 @@
         "email": "camila.castro@example.com"
       }
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

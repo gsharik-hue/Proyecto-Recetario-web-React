@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout'
 import RouteErrorBoundary from './components/RouteErrorBoundary'
 import HomePage from './pages/HomePage'
 import RecipesPage from './pages/RecipesPage'
+import FavoritesPage from './pages/FavoritesPage'
 import RecipeDetailPage from './pages/RecipeDetailPage'
 import AddRecipePage from './pages/AddRecipePage'
 import EditRecipePage from './pages/EditRecipePage'
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: 'recipes',
         element: <RecipesPage />,
+      },
+      {
+        path: 'favorites',
+        element: <FavoritesPage />,
       },
       {
         path: 'recipes/:id',
