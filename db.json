@@ -311,31 +311,6 @@
         "bio": "Repostería casera sin complicaciones.",
         "email": "camila.castro@example.com"
       }
-    },
-    {
-      "title": "pan",
-      "category": "Desayuno",
-      "difficulty": "Fácil",
-      "prepTime": 20,
-      "servings": 4,
-      "description": "harina",
-      "ingredients": [
-        {
-          "name": "elevadura",
-          "quantity": "2 tazas"
-        }
-      ],
-      "steps": [
-        "hornear"
-      ],
-      "author": {
-        "name": "sharik",
-        "bio": "chef",
-        "email": "sharikdahianagonzalezbedoya@gmail.com"
-      },
-      "favorite": false,
-      "createdAt": "2026-11-26T14:38:30.652Z",
-      "id": "wu20etGs-X0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

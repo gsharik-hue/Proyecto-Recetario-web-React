@@ -65,14 +65,14 @@ const HomePage = () => {
       <Hero />
 
       <section className="max-w-6xl mx-auto px-4 py-4">
-        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
-          <div className="text-slate-600">
-            <span className="font-bold text-slate-900">¿Tienes una receta en mente?</span>{' '}
+        <div className="bg-white rounded-2xl border border-stone-200/90 shadow-2xs px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
+          <div className="text-stone-600">
+            <span className="font-bold text-stone-900">¿Tienes una receta en mente?</span>{' '}
             Guarda tus ingredientes, pasos y tiempos de preparación en el catálogo.
           </div>
           <Link
             to="/favorites"
-            className="text-indigo-600 hover:text-indigo-800 font-semibold shrink-0"
+            className="text-amber-700 hover:text-amber-900 font-semibold shrink-0"
           >
             Ver mis favoritas ({favoriteIds.length}) →
           </Link>
@@ -81,12 +81,12 @@ const HomePage = () => {
 
       <section className="max-w-6xl mx-auto px-4 pt-4 pb-14">
         <div className="flex items-center justify-between gap-4 mb-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900">
             Últimas recetas
           </h2>
           <Link
             to="/recipes"
-            className="bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition"
+            className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition"
           >
             Ver todas
           </Link>
@@ -104,7 +104,7 @@ const HomePage = () => {
         )}
 
         {!loading && !error && latestRecipes.length === 0 && (
-          <p className="text-slate-600">
+          <p className="text-stone-600">
             Aún no hay recetas registradas para mostrar.
           </p>
         )}

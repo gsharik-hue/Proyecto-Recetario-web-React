@@ -34,14 +34,14 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
   }
 
   return (
-    <article className="bg-white rounded-2xl border-t-4 border-t-indigo-600 border-x border-b border-slate-200/90 shadow-xs p-6 flex flex-col justify-between hover:shadow-md transition">
+    <article className="bg-white rounded-2xl border-t-4 border-t-amber-600 border-x border-b border-stone-200/90 shadow-xs p-6 flex flex-col justify-between hover:shadow-md transition">
       <div>
         <div className="flex items-center justify-between gap-2 mb-4">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-semibold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full">
+            <span className="text-xs font-semibold bg-amber-100 text-amber-900 px-3 py-1 rounded-full">
               {recipe.category}
             </span>
-            <span className="text-xs font-medium bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
+            <span className="text-xs font-medium bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full">
               {recipe.difficulty}
             </span>
           </div>
@@ -66,38 +66,38 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
           )}
         </div>
 
-        <h3 className="text-xl font-extrabold text-slate-900 mb-2 leading-snug">
+        <h3 className="text-xl font-extrabold text-stone-900 mb-2 leading-snug">
           {recipe.title}
         </h3>
 
-        <p className="text-sm text-slate-600 mb-2">{displayedDescription}</p>
+        <p className="text-sm text-stone-600 mb-2">{displayedDescription}</p>
 
         {isLongText && (
           <button
             type="button"
             onClick={() => setShowFullDescription((prev) => !prev)}
-            className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 mb-3 cursor-pointer"
+            className="text-xs font-semibold text-amber-700 hover:text-amber-900 mb-3 cursor-pointer"
           >
             {showFullDescription ? 'Ver menos' : 'Ver más'}
           </button>
         )}
       </div>
 
-      <div className="pt-4 mt-4 border-t border-slate-100">
-        <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
+      <div className="pt-4 mt-4 border-t border-stone-100">
+        <div className="flex items-center justify-between text-xs text-stone-500 mb-4">
           <span className="flex items-center gap-1.5">
-            <FaClock className="text-slate-400" />
+            <FaClock className="text-amber-600" />
             {recipe.prepTime} min
           </span>
           <span className="flex items-center gap-1.5">
-            <FaUserFriends className="text-slate-400" />
+            <FaUserFriends className="text-emerald-700" />
             {recipe.servings} porciones
           </span>
         </div>
 
         <Link
           to={`/recipes/${recipe.id}`}
-          className="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition"
+          className="block w-full text-center bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition"
         >
           Ver receta
         </Link>
