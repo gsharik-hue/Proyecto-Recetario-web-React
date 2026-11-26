@@ -12,11 +12,12 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
     (_current, nextValue) => nextValue
   )
 
-  const isLongText = recipe.description.length > MAX_LENGTH
+  const description = recipe?.description || ''
+  const isLongText = description.length > MAX_LENGTH
   const displayedDescription =
     showFullDescription || !isLongText
-      ? recipe.description
-      : `${recipe.description.slice(0, MAX_LENGTH).trim()}...`
+      ? description
+      : `${description.slice(0, MAX_LENGTH).trim()}...`
 
   const handleHeartClick = () => {
     if (!onToggleFavorite) return
@@ -33,14 +34,14 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
   }
 
   return (
-    <article className="bg-white rounded-2xl shadow-sm border border-gray-200/80 p-6 flex flex-col justify-between hover:shadow-md transition">
+    <article className="bg-white rounded-2xl border-t-4 border-t-amber-600 border-x border-b border-stone-200/90 shadow-xs p-6 flex flex-col justify-between hover:shadow-md transition">
       <div>
         <div className="flex items-center justify-between gap-2 mb-4">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-semibold bg-amber-100/80 text-amber-900 px-3 py-1 rounded-full">
+            <span className="text-xs font-semibold bg-amber-100 text-amber-900 px-3 py-1 rounded-full">
               {recipe.category}
             </span>
-            <span className="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+            <span className="text-xs font-medium bg-stone-100 text-stone-700 px-3 py-1 rounded-full">
               {recipe.difficulty}
             </span>
           </div>
@@ -65,11 +66,11 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
           )}
         </div>
 
-        <h3 className="text-xl font-extrabold text-gray-900 mb-2 leading-snug">
+        <h3 className="text-xl font-extrabold text-stone-900 mb-2 leading-snug">
           {recipe.title}
         </h3>
 
-        <p className="text-sm text-gray-600 mb-2">{displayedDescription}</p>
+        <p className="text-sm text-stone-600 mb-2">{displayedDescription}</p>
 
         {isLongText && (
           <button
@@ -82,21 +83,21 @@ const RecipeCard = ({ recipe, isFavorite = false, onToggleFavorite }) => {
         )}
       </div>
 
-      <div className="pt-4 mt-4 border-t border-gray-100">
-        <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+      <div className="pt-4 mt-4 border-t border-stone-100">
+        <div className="flex items-center justify-between text-xs text-stone-500 mb-4">
           <span className="flex items-center gap-1.5">
-            <FaClock className="text-gray-400" />
+            <FaClock className="text-amber-600/80" />
             {recipe.prepTime} min
           </span>
           <span className="flex items-center gap-1.5">
-            <FaUserFriends className="text-gray-400" />
+            <FaUserFriends className="text-amber-600/80" />
             {recipe.servings} porciones
           </span>
         </div>
 
         <Link
           to={`/recipes/${recipe.id}`}
-          className="block w-full text-center bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition"
+          className="block w-full text-center bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition"
         >
           Ver receta
         </Link>

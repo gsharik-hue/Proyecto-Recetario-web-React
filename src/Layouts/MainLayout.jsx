@@ -5,15 +5,20 @@ import Navbar from '../components/Navbar'
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800">
+    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900">
       <Navbar />
+
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer className="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500">
-        CookBook &copy; {new Date().getFullYear()} — Recetario comunitario en React 19
+
+      <footer className="bg-white border-t border-stone-200/80 py-6 text-center text-xs sm:text-sm text-stone-500">
+        <div className="max-w-6xl mx-auto px-4">
+          CookBook © 2026 — Recetario comunitario en React 19
+        </div>
       </footer>
-      <ToastContainer position="bottom-right" autoClose={3000} />
+
+      <ToastContainer position="top-right" autoClose={2500} />
     </div>
   )
 }

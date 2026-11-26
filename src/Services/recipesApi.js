@@ -5,39 +5,44 @@ export async function getAllRecipes() {
   if (!response.ok) {
     throw new Error('No se pudieron cargar las recetas')
   }
-  return response.json()
+  const data = await response.json()
+  return Array.isArray(data) ? data : data.data || []
 }
 
+export const getRecipes = getAllRecipes
+
 export async function getLatestRecipes(limit = 3) {
-  const response = await fetch(`${API_URL}?_sort=-createdAt&_limit=${limit}`)
-  if (!response.ok) {
-    throw new Error('No se pudieron cargar las recetas recientes')
-  }
-  const data = await response.json()
-  const list = Array.isArray(data) ? data : data.data || []
-  return [...list]
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  const recipes = await getAllRecipes()
+  return [...recipes]
+    .sort((a, b) => {
+      const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0
+      const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0
+      return dateB - dateA
+    })
     .slice(0, limit)
 }
 
 export async function getRecipeById(id) {
   const response = await fetch(`${API_URL}/${id}`)
+  if (response.status === 404) {
+    throw new Response('Receta no encontrada', { status: 404 })
+  }
   if (!response.ok) {
-    throw new Error('Receta no encontrada')
+    throw new Error('No se pudo cargar el detalle de la receta')
   }
   return response.json()
 }
 
-export async function createRecipe(recipeData) {
-  const newRecipe = {
-    ...recipeData,
+export async function createRecipe(newRecipe) {
+  const payload = {
+    ...newRecipe,
     favorite: false,
     createdAt: new Date().toISOString(),
   }
   const response = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(newRecipe),
+    body: JSON.stringify(payload),
   })
   if (!response.ok) {
     throw new Error('No se pudo crear la receta')
@@ -45,11 +50,11 @@ export async function createRecipe(recipeData) {
   return response.json()
 }
 
-export async function updateRecipe(id, recipeData) {
+export async function updateRecipe(id, updatedRecipe) {
   const response = await fetch(`${API_URL}/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(recipeData),
+    body: JSON.stringify(updatedRecipe),
   })
   if (!response.ok) {
     throw new Error('No se pudo actualizar la receta')
@@ -68,6 +73,9 @@ export async function patchRecipe(id, partialData) {
   }
   return response.json()
 }
+
+export const toggleFavoriteRecipe = (id, favorite) =>
+  patchRecipe(id, { favorite })
 
 export async function deleteRecipe(id) {
   const response = await fetch(`${API_URL}/${id}`, {
