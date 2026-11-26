@@ -1,4 +1,4 @@
-# 🍳 CookBook — Recetario Casero
+#  CookBook — Recetario Casero
 
 Aplicación web de recetario casero desarrollada con **React 19, Vite, Tailwind CSS v4, React Router 7 y json-server** como API REST local.
 
@@ -44,7 +44,7 @@ npm run lint
 npm run build
 ```
 
-## ✨ Funcionalidades implementadas
+##  Funcionalidades implementadas
 
 ### Núcleo obligatorio
 
@@ -173,4 +173,4 @@ Proyecto desarrollado como práctica de aprendizaje y aplicación de conceptos m
 
 ---
 
-**CookBook — Organiza tus recetas, descubre nuevos sabores y disfruta cocinando.** 🍳
+**CookBook — Organiza tus recetas, descubre nuevos sabores y disfruta cocinando.** 
