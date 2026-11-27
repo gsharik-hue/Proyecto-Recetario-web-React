@@ -44,7 +44,7 @@ npm run lint
 npm run build
 ```
 
-##  Funcionalidades implementadas
+##   Funcionalidades implementadas
 
 ### Núcleo obligatorio
 
@@ -152,20 +152,17 @@ Durante el desarrollo se realizaron ajustes para cumplir las reglas de ESLint y 
 ## Capturas de pantalla
 
 ### Portada
-
-<!-- Agrega aquí la captura de la página principal -->
+![Portada de CookBook](./captures/home.png)
 
 ### Listado de recetas
-
-<!-- Agrega aquí la captura del catálogo de recetas -->
+![Listado de recetas en CookBook](./captures/recipes.png)
 
 ### Detalle de receta
-
-<!-- Agrega aquí la captura del detalle de una receta -->
+![Detalle de receta en CookBook](./captures/detail.png)
 
 ### Formulario de receta
+![Formulario de receta en CookBook](./captures/from.png)
 
-<!-- Agrega aquí la captura del formulario para crear o editar recetas -->
 
 ## Autor
 

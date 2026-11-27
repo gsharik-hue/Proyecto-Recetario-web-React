@@ -3,6 +3,7 @@
     {
       "id": "1",
       "title": "Arepas de choclo con queso",
+      "image": "/images/arepas-choclo.jpg",
       "category": "Desayuno",
       "difficulty": "Fácil",
       "prepTime": 25,
@@ -42,6 +43,7 @@
     {
       "id": "2",
       "title": "Caldo de costilla criollo",
+      "image": "/images/caldo-costilla.jpg",
       "category": "Almuerzo",
       "difficulty": "Fácil",
       "prepTime": 45,
@@ -81,6 +83,7 @@
     {
       "id": "3",
       "title": "Wrap de pollo y vegetales asados",
+      "image": "/images/wrap-pollo.jpg",
       "category": "Cena",
       "difficulty": "Fácil",
       "prepTime": 20,
@@ -120,6 +123,7 @@
     {
       "id": "4",
       "title": "Torta de banano y avena",
+      "image": "/images/torta-banano.jpg",
       "category": "Postre",
       "difficulty": "Media",
       "prepTime": 40,
@@ -159,6 +163,7 @@
     {
       "id": "5",
       "title": "Limonada de hierbabuena granizada",
+      "image": "/images/limonada-hierbabuena.jpg",
       "category": "Bebida",
       "difficulty": "Fácil",
       "prepTime": 10,
@@ -198,6 +203,7 @@
     {
       "id": "6",
       "title": "Risotto de champiñones al vino blanco",
+      "image": "/images/risotto-champinones.jpg",
       "category": "Almuerzo",
       "difficulty": "Difícil",
       "prepTime": 50,
@@ -237,6 +243,7 @@
     {
       "id": "7",
       "title": "Tostadas francesas con frutos rojos",
+      "image": "/images/tostadas-francesas.jpg",
       "category": "Desayuno",
       "difficulty": "Media",
       "prepTime": 20,
@@ -276,6 +283,7 @@
     {
       "id": "8",
       "title": "Mousse exprés de maracuyá",
+      "image": "/images/mousse-maracuya.jpg",
       "category": "Postre",
       "difficulty": "Media",
       "prepTime": 25,
